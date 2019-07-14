@@ -6,6 +6,46 @@
   object name, diet, weight, length, period
 */
 
+class Dinosaurs {
+  constructor(ParentDinoAttributes){
+    this.name = ParentDinoAttributes.name;
+    this.diet = ParentDinoAttributes.diet;
+    this.weight = ParentDinoAttributes.weight;
+    this.length = ParentDinoAttributes.length;
+    this.period = ParentDinoAttributes.period;
+  }
+
+  roar(){
+
+  }
+
+}
+
+const tyrannosaurus = new Dinosaurs({
+  name: `Tyrannosaurus`,
+  diet: `carnivorous`,
+  weight: `7000kg`,
+  length: `12m`,
+  period: `Late Cretaceus`
+})
+const stegosaurus = new Dinosaurs({
+  name: `stegosaurus`,
+  diet: `herbivourus`,
+  weight: `2000kg`,
+  length: `9m`,
+  period: `Late Jurassic`
+})
+const velociraptor = new Dinosaurs({
+  name: `velociraptor`,
+  diet: `carnivorous`,
+  weight: `15kg`,
+  length: `1.8m`,
+  period: `Late Cretaceus`,
+  roar: function(){
+    return `RAWERSRARARWERSARARARRRR!`
+  },
+})
+
 // tyrannosaurus, carnivorous, 7000kg, 12m, Late Cretaceous
 
 // stegosaurus, herbivorous, 2000kg, 9m, Late Jurassic
@@ -15,20 +55,20 @@
 // Using your dinosaur objects, log answers to these questions:
 
 // How much did tyrannosaurus weigh?
-console.log();
+console.log(tyrannosaurus.weight);
 
 // What was the diet of a velociraptor?
-console.log();
+console.log(velociraptor.diet);
 
 // How long was a stegosaurus?
-console.log();
+console.log(stegosaurus.length);
 
 // What time period did tyrannosaurus live in?
-console.log();
+console.log(tyrannosaurus.period);
 
 
 // Create a new roar method for the tyrannosaurus.  When called, return "RAWERSRARARWERSARARARRRR!" Log the result.
-console.log();
+console.log(tyrannosaurus.roar());
 
 
 // ==== Arrays ====
@@ -49,7 +89,11 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 /* Request 1: Create a new array called universities that contains all the universities in the graduates array.  
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
-const universities = [];
+const universities = graduates.map(function(university){
+  return university.university
+})
+universities.sort()
+//const universities = [];
 console.log(universities)
 
 /* Request 2: Create a new array called contactInfo that contains both first name and email of each student. 
@@ -58,12 +102,23 @@ The resulting contact information should have a space between the first name and
 Name email@example.com
 
 Log the result of your new array. */
-const contactInfo = [];
+const contactInfo = graduates.map(function(element){
+  return `${element.first_name} ${element.email}`
+});
 console.log(contactInfo);
 
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
-const uni = [];
+const uni = graduates.map(function(universities){
+  return universities.university
+});
+
+uni.forEach(function(university){
+  if(university.includes(`uni`)){
+    return university
+  }
+})
+
 console.log(uni);
 
 

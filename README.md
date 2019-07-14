@@ -30,25 +30,45 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Describe the biggest difference between `.forEach` & `.map`.
 
+.forEach() will iterate through an array, you have access to each item and can change items from the original array.
+
+.map() returns a new array not changing the original array it's iterating through.  
+
 2. What is the difference between a function and a method?
+
+A function is a block of code that is executed when called. 
+
+A method is a funcion on an object.
 
 3. What is closure?
 
+A closure is a function havingn access to it's parents scope. 
+
 4. Describe the four rules of the 'this' keyword.
 
+.this points at a peticular object without having to usie it's name.  In global scope it will point to the window object.
+
+Inplicit binding: object1.run() the object before the dot is the .this
+
+New Binding: When a constructor function is used to create a new object the .this points to the instance (the new object reference).
+
+Explicit binding: when call() or apply() .this is explicitly defined to that object. 
+
 5. Why do we need super() in an extended class?
+
+super() binds the child object to the parent object (via extends)
 
 ## Project Set up
 
 Follow these steps to set up and work on your project:
 
-- [ ] Create a forked copy of this project.
+- [x] Create a forked copy of this project.
 - [ ] Add PM as collaborator on Github.
-- [ ] Clone your OWN version of Repo (Not Lambda's by mistake!).
-- [ ] Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
+- [x] Clone your OWN version of Repo (Not Lambda's by mistake!).
+- [x] Create a new Branch on the clone: git checkout -b `<firstName-lastName>`.
 - [ ] Create a pull request before you start working on the project requirements.  You will continuously push your updates throughout the project.
-- [ ] You are now ready to build this project with your preferred IDE
-- [ ] Implement the project on your Branch, committing changes regularly.
+- [x] You are now ready to build this project with your preferred IDE
+- [x] Implement the project on your Branch, committing changes regularly.
 - [ ] Push commits: git push origin `<firstName-lastName>`.
 
 Follow these steps for completing your project:
