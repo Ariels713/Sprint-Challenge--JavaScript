@@ -16,7 +16,7 @@ class Dinosaurs {
   }
 
   roar(){
-
+    return "RAWERSRARARWERSARARARRRR!"
   }
 
 }
@@ -109,21 +109,7 @@ console.log(contactInfo);
 
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
-const uni = graduates.map((universities) => {
-  return universities.university
-});
 
-const newUni = []
-uni.forEach(function(university){
-  // university.join();
-  // university.filter('uni');
-  // university.split(' ');
-  // newUni.push(university);
-  
-})
-
-console.log(uni);
-//console.log(newUni)
 
 // ==== ADVANCED Array Methods ====
 
