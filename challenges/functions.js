@@ -44,7 +44,20 @@ console.log(consume(`ariel`, `r`, greeting))
 // Explain in your own words why `nestedfunction()` can access the variable `internal`.
 
 // Explanation: 
+// 
+// Starting on line: 50.  external is globally scoped, any function will have access to this variable. 
+// Line 53: The myFunction function code block contains a nested function.  Before the nesting happens, a variable `external` is stored.  The nested function will have access to anthing `above` it's nesting.  
 
+//Breaking down lines 53-64:
+/*
+Line 56 is executed.  `external variable is commited to memory. 
+line 68 is executed.  `myFunction()` is called. 
+line 61 is executed.  `external` variable is called. 
+line 63 is executed.  `internal` variable is commted to memory.
+line 66 is exectued.  `nestedFunction` is called.
+line 65 is exectued.  `internal` is loged to the console. 
+code block ends.
+*/
 
 const external = "I'm outside the function";
 

@@ -5,37 +5,38 @@
 /* == Step 1: Base Constructor ==
   Create a constructor function named CuboidMaker that accepts properties for length, width, and height
 */
-class CuboidMaker {
-  constructor(cuboidAttributes){
-    this.length = cuboidAttributes.length;
-    this.width = cuboidAttributes.width;
-    this.height = cuboidAttributes.height;
-  }
 
-  volume(){
-    return this.length * this.width * this.height
-  }
+function CubiodMaker (attributes) {
+  this.length = attributes.length;
+  this.width = attributes.width;
+  this.height = attributes.height;
+} 
 
-  surfaceArea(){
-    return 2 * (this.length * this.width * this.height + this.width + this.width * this.height)
-  }
-
+CubiodMaker.prototype.volume = function(){
+  return this.length * this.width * this.height;
 }
 
-const firstCubiod = new CuboidMaker({
-  length: 4,
-  width: 5,
-  height: 5,
-})
-console.log(firstCubiod.volume())
-console.log(firstCubiod.surfaceArea())
+CubiodMaker.prototype.surfaceArea = function(){
+  return 2 * (this.length * this.width + this.length * this.height + this.width * this.height);
+}
+
+CubiodMaker.prototype.name = `Cube Name 2`
+
 
 /* == Step 2: Volume Method ==
   Create a method using CuboidMaker's prototype that returns the volume of a given cuboid's length, width, and height
   
   Formula for cuboid volume: length * width * height
 */
-
+const cube1 = new CubiodMaker ({
+  length: 5,
+  width: 5,
+  height: 5
+})
+console.log(cube1.volume())
+console.log(cube1.name)
+cube1.name = `New name`
+console.log(cube1.name)
 
 /* == Step 3: Surface Area Method ==
   Create another method using CuboidMaker's prototype that returns the surface area of a given cuboid's length, width, and height. 
@@ -48,6 +49,14 @@ console.log(firstCubiod.surfaceArea())
   Create a cuboid object that uses the new keyword to use our CuboidMaker constructor
   Add properties and values of length: 4, width: 5, and height: 5 to cuboid.   
 */
+
+const cube2 = new CubiodMaker ({
+  length: 4,
+  width: 5,
+  height: 5
+})
+console.log(cube2.surfaceArea())
+console.log(cube2.name)
 
 // Test your volume and surfaceArea methods by uncommenting the logs below:
 // console.log(cuboid.volume()); // 100
